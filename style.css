@@ -17,16 +17,27 @@ main {
   display: flex;
   flex: 1;
   justify-content: center;
+  align-items: center;
 }
 .game-select {
   flex: 1;
   display: flex;
   justify-content: center;
-  align-items: center;
   border: 3px solid black;
   color: white;
   background: red;
   margin: 10px;
-  max-height: 200px;
+  height: 200px;
   max-width: 200px;
+}
+.game-tile {
+  flex: 1;
+  height: 106px;
+  max-width: 106px;
+  margin: 10px;
+  border: 3px solid black;
+}
+.row {
+  display: flex;
+  justify-content: center;
 }
