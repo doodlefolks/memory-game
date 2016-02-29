@@ -24,7 +24,7 @@
     return selectedImages;
   }
 
-  var imageNames = ['pig.jpeg', 'mt_rainier.jpg', 'tree.jpg', 'orange.jpg', 'apple.jpg', 'bear.jpg', 'cat.jpeg', 'fish.JPG'];
+  var imageNames = ['pig.jpeg', 'mt_rainier.jpg', 'tree.jpg', 'orange.jpg', 'apple.jpg', 'bear.jpg', 'cat.jpeg', 'fish.JPG', 'bowling_ball.jpg', 'pineapple.jpg', 'waldo.jpg', 'rat.jpg', 'scooby.jpg', 'boat.jpg', 'dog.jpg', 'beer.jpg', 'arch.jpg', 'space_needle.jpg'];
   var fourByFour = document.getElementById('four-by-four');
   var sixBySix = document.getElementById('six-by-six');
   var eightByEight = document.getElementById('eight-by-eight');
