@@ -1,7 +1,7 @@
-(function() {
+(function () {
   'use strict';
 
-  var hideButtons = function() {
+  var hideButtons = function () {
     var buttons = document.getElementsByClassName('game-select');
     for (var i = 0; i < buttons.length; i++) {
       buttons[i].style.display = 'none';
@@ -20,7 +20,7 @@
     }
     return selectedImages;
   };
-  var setupImages = function(gridSize) {
+  var setupImages = function (gridSize) {
     var selectedImages = pickImgSet(gridSize);
     var main = document.getElementsByTagName('main')[0];
     var row, gameTile, tileImage;
@@ -51,12 +51,11 @@
       main.appendChild(row);
     }
   };
-  var clickTile = function() {
+  var clickTile = function () {
     var clickedImg = this.getElementsByTagName('img')[0];
     clickedImg.style.display = 'inline-block';
     if (prevTileClicked) {
       if (clickedImg !== prevClickedTileImg && clickedImg.src === prevClickedTileImg.src) {
-        alert('match');
         this.className = 'game-tile game-tile-shown';
         this.removeEventListener('click', clickTile);
         prevClickedTileImg.parentNode.className = 'game-tile game-tile-shown';
@@ -74,7 +73,18 @@
       prevClickedTileImg = clickedImg;
       prevTileClicked = true;
     }
+    if (victoryCheck()) {
+      alert('You win! Refresh to start over.')
+    }
   };
+  var victoryCheck = function () {
+    var tileImages = document.getElementsByTagName('img');
+    debugger;
+    for (var i = 0; i < tileImages.length; i++) {
+      if (tileImages[i].style.display === 'none' || tileImages[i].style.display === '') return false;
+    }
+    return true;
+  }
 
   var imageNames = ['pig.jpeg', 'mt_rainier.jpg', 'tree.jpg', 'orange.jpg', 'apple.jpg', 'bear.jpg', 'cat.jpeg', 'fish.JPG', 'bowling_ball.jpg', 'pineapple.jpg', 'waldo.jpg', 'rat.jpg', 'scooby.jpg', 'boat.jpg', 'dog.jpg', 'beer.jpg', 'arch.jpg', 'space_needle.jpg'];
   var fourByFour = document.getElementById('four-by-four');
